@@ -22,25 +22,24 @@ public class OI {
 	public JoystickButton xboxLStick = new JoystickButton(driveGamePad, RobotMap.xboxLStickPort);
 	public JoystickButton xboxRStick = new JoystickButton(driveGamePad, RobotMap.xboxRStickPort);
 	
-	public Trigger operatorLT = new Trigger() {
+	public Trigger xboxLT = new Trigger() {
 		@Override
 		public boolean get() {
-			if (operatorController.getRawAxis(2) > 0.1)
+			if (driveGamePad.getRawAxis(2) > 0.1)
 				return true;
 			return false;
 		}
 	};
-	public Trigger operatorRT = new Trigger() {
+	public Trigger xboxRT = new Trigger() {
 
 		@Override
 		public boolean get() {
-			if (operatorController.getRawAxis(3) > 0.1)
+			if (driveGamePad.getRawAxis(3) > 0.1)
 				return true;
 			return false;
 		}
 	};
 		
-		@Override
 		public void execute() {
 			// TODO Auto-generated method stub
 			
@@ -55,11 +54,8 @@ public class OI {
 	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
 	public JoystickButton guitar4 = new JoystickButton(guitarPad, RobotMap.guitar4Port);
 	public JoystickButton guitar5 = new JoystickButton(guitarPad, RobotMap.guitar5Port);
+	
 
 	
-	public OI(){
-		public static xboxRT(){
-			return RobotMap
-		}
-	}
+	
 }
