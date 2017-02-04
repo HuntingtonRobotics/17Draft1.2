@@ -19,4 +19,9 @@ public class RobotMap {
 	public static final double shooterSpeed=1;// The default speed that the shooter motor will rin at
 	
 	public static final int shooterMotorPort=4;//The PWM for the shooter motor
+	
+	public static final int climbMotorPort=5;
+	public static final double climbMotorSpeed=1;
+	
+	public static final int driverJoystickPort=0;
 }
