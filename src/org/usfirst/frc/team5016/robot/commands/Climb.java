@@ -1,5 +1,10 @@
 package org.usfirst.frc.team5016.robot.commands;
 
+import org.usfirst.frc.team5016.robot.Robot;
+import org.usfirst.frc.team5016.robot.RobotMap;
+
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -13,7 +18,9 @@ public class Climb extends Command {
     }
 
     // Called just before this Command runs the first time
+    CANTalon climbMotor;
     protected void initialize() {
+    	Robot.climber.climbMotor.set(RobotMap.climbMotorSpeed);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -27,6 +34,7 @@ public class Climb extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	climbMotor.set(0);//Turn off climb motor
     }
 
     // Called when another command which requires one or more of the same
