@@ -19,7 +19,11 @@ public class Shoot extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.shooterMotor.set(RobotMap.shooterSpeed);
+    	Robot.shooter.motor.set(RobotMap.shooterSpeed);
+    	Robot.shooter.refreshEncoder();
+    	if(Robot.shooter.encoderRate>=RobotMap.shooterReleaseRate){//When the shooter motor reaches a certain speed, release the Fuel
+    		new ReleaseFuel();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -29,7 +33,7 @@ public class Shoot extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooter.shooterMotor.set(0);
+    	Robot.shooter.motor.set(0);
     }
 
     // Called when another command which requires one or more of the same
