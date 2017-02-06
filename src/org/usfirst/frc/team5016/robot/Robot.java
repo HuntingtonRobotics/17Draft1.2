@@ -4,6 +4,7 @@ package org.usfirst.frc.team5016.robot;
 import org.usfirst.frc.team5016.robot.subsystems.Camera;
 import org.usfirst.frc.team5016.robot.subsystems.Climber;
 import org.usfirst.frc.team5016.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team5016.robot.subsystems.FuelRelease;
 import org.usfirst.frc.team5016.robot.subsystems.Gyroscope;
 import org.usfirst.frc.team5016.robot.subsystems.Shooter;
 
@@ -33,6 +34,7 @@ public class Robot extends IterativeRobot {
 	public static Shooter shooter;
 	public static Gyroscope gyroscope;
 	public static Climber climber;
+	public static FuelRelease fuelRelease;
 	
 	public static OI oi;
 	/**
@@ -46,6 +48,7 @@ public class Robot extends IterativeRobot {
 		shooter = new Shooter();
 		gyroscope = new Gyroscope();
 		climber = new Climber();
+		fuelRelease = new FuelRelease();
 		
 		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
 		
@@ -110,6 +113,7 @@ public class Robot extends IterativeRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
+		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
 	}
 
 	/**
@@ -117,6 +121,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
 		Scheduler.getInstance().run();
 	}
 
