@@ -2,7 +2,6 @@ package org.usfirst.frc.team5016.robot.subsystems;
 
 import edu.wpi.first.wpilibj.CounterBase;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team5016.robot.RobotMap;
 
@@ -29,7 +28,7 @@ public class Shooter extends Subsystem {
     }
     
     public void refreshEncoder(){
-    	this.encoderRate=this.encoder.getRate();
+    	this.encoderRate = this.encoder.getRate();
     }
     
 }
