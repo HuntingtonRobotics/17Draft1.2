@@ -5,8 +5,13 @@ import org.usfirst.frc.team5016.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ *
+ */
 public class Shoot extends Command {
 
+	double voltage;
+	boolean loading;
     public Shoot() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.shooter);
@@ -14,15 +19,31 @@ public class Shoot extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
+    	voltage = RobotMap.shooterSpeed;
+    	loading = false;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.motor.set(RobotMap.shooterSpeed);
     	Robot.shooter.refreshEncoder();
+    	if(loading && Robot.shooter.encoderRate<=RobotMap.shooterMinRate){
+    		loading = false;
+    	}
     	if(Robot.shooter.encoderRate>=RobotMap.shooterReleaseRate){//When the shooter motor reaches a certain speed, release the Fuel
-    		new ReleaseFuel();
+    		if(!loading){
+    			new ReleaseFuel();
+    			loading = true;
+    		}
+    		Robot.shooter.motor.set(voltage-0.01);
+    		voltage -=.01;
+    		
+    	}else if(Robot.shooter.encoderRate>=RobotMap.shooterMinRate){
+    		Robot.shooter.motor.set(voltage+0.01);
+    		voltage +=.01;
+    		
+    	}else{
+    		Robot.shooter.motor.set(RobotMap.shooterSpeed);
+    		voltage = RobotMap.shooterSpeed;
     	}
     }
 
@@ -41,4 +62,5 @@ public class Shoot extends Command {
     protected void interrupted() {
     	end();
     }
+    
 }
