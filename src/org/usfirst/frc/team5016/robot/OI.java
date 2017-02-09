@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
  */
 public class OI {
 	public Joystick driveGamePad = new Joystick(RobotMap.driveGamePadPort);
-	public JoystickButton xboxA = new JoystickButton(driveGamePad, RobotMap.xboxYPort);
+	/*public JoystickButton xboxA = new JoystickButton(driveGamePad, RobotMap.xboxYPort);
 	public JoystickButton xboxB = new JoystickButton(driveGamePad, RobotMap.xboxBPort);
 	public JoystickButton xboxX = new JoystickButton(driveGamePad, RobotMap.xboxAPort);
 	public JoystickButton xboxY = new JoystickButton(driveGamePad, RobotMap.xboxXPort);
@@ -44,17 +44,28 @@ public class OI {
 			// TODO Auto-generated method stub
 			
 		}
-	
+	*/
 	 
 	
 	
-	public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
+	/*public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
 	public JoystickButton guitar1 = new JoystickButton(guitarPad, RobotMap.guitar1Port);
 	public JoystickButton guitar2 = new JoystickButton(guitarPad, RobotMap.guitar2Port);
 	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
 	public JoystickButton guitar4 = new JoystickButton(guitarPad, RobotMap.guitar4Port);
 	public JoystickButton guitar5 = new JoystickButton(guitarPad, RobotMap.guitar5Port);
+	*/
+	public double getLeftStickX(){
+		return driveGamePad.getRawAxis(0);
+	}
 	
+	public double getLeftStickY(){
+		return driveGamePad.getRawAxis(1);
+	}
+	
+	public double getRightStickX(){
+		return driveGamePad.getRawAxis(2);
+	}
 
 	
 	

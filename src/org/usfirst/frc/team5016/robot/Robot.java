@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team5016.robot;
 
+import org.usfirst.frc.team5016.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team5016.robot.subsystems.Camera;
 import org.usfirst.frc.team5016.robot.subsystems.Climber;
 import org.usfirst.frc.team5016.robot.subsystems.DriveTrain;
@@ -35,6 +36,7 @@ public class Robot extends IterativeRobot {
 	public static Gyroscope gyroscope;
 	public static Climber climber;
 	public static FuelRelease fuelRelease;
+	public static Accelerometer accelerometer;
 	
 	public static OI oi;
 	/**
@@ -49,7 +51,7 @@ public class Robot extends IterativeRobot {
 		gyroscope = new Gyroscope();
 		climber = new Climber();
 		fuelRelease = new FuelRelease();
-		
+		accelerometer = new Accelerometer();
 		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
 		
 		oi = new OI();
