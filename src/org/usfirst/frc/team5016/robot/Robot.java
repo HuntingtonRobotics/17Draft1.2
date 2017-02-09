@@ -50,7 +50,6 @@ public class Robot extends IterativeRobot {
 		climber = new Climber();
 		fuelRelease = new FuelRelease();
 		
-		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
 		
 		oi = new OI();
 		
@@ -121,8 +120,13 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
+			gyroscope.refreshGyro();//get the new values from the gyroscope like Angle and Rate
+		System.out.println("X: " + camera.table.getNumber("x", camera.x) + "     " + "Y: " + camera.table.getNumber("y", camera.y));
+		/*SmartDashboard.putNumber("X", camera.table.getNumber("X", 0.0));
+		SmartDashboard.putNumber("Y", camera.table.getNumber("Y", 0.0));*/
 		Scheduler.getInstance().run();
+		
+
 	}
 
 	/**

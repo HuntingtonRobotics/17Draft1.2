@@ -39,6 +39,20 @@ public class OI {
 			return false;
 		}
 	};
+	//public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
+	public Joystick guitarPad = new Joystick(0);
+	public JoystickButton guitar1 = new JoystickButton(guitarPad, RobotMap.guitar1Port);
+	public JoystickButton guitar2 = new JoystickButton(guitarPad, RobotMap.guitar2Port);
+	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
+	public JoystickButton guitar4 = new JoystickButton(guitarPad, RobotMap.guitar4Port);
+	public JoystickButton guitar5 = new JoystickButton(guitarPad, RobotMap.guitar5Port);
+	
+	
+	
+		
+		
+	
+
 		
 		public void execute() {
 			// TODO Auto-generated method stub
@@ -48,12 +62,7 @@ public class OI {
 	 
 	
 	
-	public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
-	public JoystickButton guitar1 = new JoystickButton(guitarPad, RobotMap.guitar1Port);
-	public JoystickButton guitar2 = new JoystickButton(guitarPad, RobotMap.guitar2Port);
-	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
-	public JoystickButton guitar4 = new JoystickButton(guitarPad, RobotMap.guitar4Port);
-	public JoystickButton guitar5 = new JoystickButton(guitarPad, RobotMap.guitar5Port);
+	
 	
 
 	

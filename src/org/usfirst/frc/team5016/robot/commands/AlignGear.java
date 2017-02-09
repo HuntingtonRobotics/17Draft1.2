@@ -1,13 +1,18 @@
 package org.usfirst.frc.team5016.robot.commands;
 
+import org.usfirst.frc.team5016.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
 public class AlignGear extends Command {
+	
 
     public AlignGear() {
+    	requires(Robot.camera);
+    	
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
