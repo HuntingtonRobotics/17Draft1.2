@@ -28,7 +28,7 @@ public class Shooter extends Subsystem {
     }
     
     public void refreshEncoder(){
-    	this.encoderRate=this.encoder.getRate();
+    	this.encoderRate = this.encoder.getRate();
     }
     
 }
