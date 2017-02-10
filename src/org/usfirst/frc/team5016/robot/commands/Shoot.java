@@ -15,11 +15,14 @@ public class Shoot extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	
+    	Robot.shooter.motor.set(RobotMap.shooterSpeed);
+    	Robot.shooter.refreshEncoder();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.motor.set(RobotMap.shooterSpeed);
+    	
     	Robot.shooter.refreshEncoder();
     	if(Robot.shooter.encoderRate>=RobotMap.shooterReleaseRate){//When the shooter motor reaches a certain speed, release the Fuel
     		new ReleaseFuel();
