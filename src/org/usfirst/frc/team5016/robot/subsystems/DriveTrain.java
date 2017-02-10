@@ -25,8 +25,8 @@ public class DriveTrain extends Subsystem {
     }
    public void tankDrive(double left, double right){
     	this.frontLeft.set(left);
-    	this.frontRight.set(left);
-    	this.backLeft.set(right);
+    	this.frontRight.set(right);
+    	this.backLeft.set(left);
     	this.backRight.set(right);
     }
     
