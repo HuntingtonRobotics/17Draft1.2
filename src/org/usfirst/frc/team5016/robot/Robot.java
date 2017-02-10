@@ -1,11 +1,13 @@
 
 package org.usfirst.frc.team5016.robot;
 
+import org.usfirst.frc.team5016.robot.commands.MecanumDrive;
 import org.usfirst.frc.team5016.robot.subsystems.Camera;
 import org.usfirst.frc.team5016.robot.subsystems.Climber;
 import org.usfirst.frc.team5016.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5016.robot.subsystems.FuelRelease;
 import org.usfirst.frc.team5016.robot.subsystems.Gyroscope;
+import org.usfirst.frc.team5016.robot.subsystems.IntakePool;
 import org.usfirst.frc.team5016.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -35,6 +37,15 @@ public class Robot extends IterativeRobot {
 	public static Gyroscope gyroscope;
 	public static Climber climber;
 	public static FuelRelease fuelRelease;
+	public static MecanumDrive mecanumDrive;
+	public static IntakePool intakePool;
+	
+	
+	
+	
+	
+	
+	
 	
 	public static OI oi;
 	/**
@@ -49,6 +60,13 @@ public class Robot extends IterativeRobot {
 		gyroscope = new Gyroscope();
 		climber = new Climber();
 		fuelRelease = new FuelRelease();
+		mecanumDrive = new MecanumDrive();
+		intakePool = new IntakePool();
+		
+		
+		
+		
+		
 		
 		
 		oi = new OI();
