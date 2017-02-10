@@ -7,13 +7,12 @@ package org.usfirst.frc.team5016.robot;
  * floating around.
  */
 public class RobotMap {
-	public static final int frontRightMotorPort = 0;//The PWM ports for the drive motors
-	public static final int frontLeftMotorPort = 1;
-	public static final int backRightMotorPort = 2;
-	public static  final int backLeftMotorPort = 3;
+	public static final int frontRightMotorPort = 2; //3
+	public static final int frontLeftMotorPort = 0; //4
+	public static final int backRightMotorPort = 3; //1
+	public static final int backLeftMotorPort = 1; //2
 	
 	public static final int driveGamePadPort = 0;//The Drive and Operator gamepad Ports
-	public static final int guitarPadPort = 1;
 	
 	public static final int xboxAPort = 1;
 	public static final int xboxBPort = 2;
@@ -26,18 +25,24 @@ public class RobotMap {
 	public static final int xboxLStickPort = 9;
 	public static final int xboxRStickPort = 10;
 	
+	public static final int guitarPadPort = 1;
+	
 	public static final int guitar1Port = 1;
 	public static final int guitar2Port = 2;
 	public static final int guitar3Port = 4;
 	public static final int guitar4Port = 3;
 	public static final int guitar5Port = 5;
 	
-	public static final double driveSpeed = .5;//Multiplier for the driveTrain ex. .5 reduces speed by 1/2
+	public static final double driveSpeed = .25;//Multiplier for the driveTrain ex. .5 reduces speed by 1/2
 	public static final double shooterSpeed = 1;// The default speed that the shooter motor will rin at
 	
-	public static final int shooterMotorPort = 4;//The PWM for the shooter motor
+	public static final int intakeMotorPort = 4;
+	public static final int intakeMotorSpeed = 1;
 	
-	public static final int climbMotorPort = 5;
+	public static final int shooterMotorPort = 5;//The PWM for the shooter motor
+	public static final double shooterMotorSpeed = 0.9;
+	
+	public static final int climbMotorPort = 6;
 	public static final double climbMotorSpeed = 1;
 	
 	public static final int shooterEncoderChannelA = 0;//The encoder channels for the ShooterEncoder
