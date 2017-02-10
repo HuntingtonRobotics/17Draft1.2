@@ -27,7 +27,8 @@ public class OI {
 		public boolean get() {
 			if (driveGamePad.getRawAxis(2) > 0.1)
 				return true;
-			return false;
+			else
+				return false;
 		}
 	};
 	public Trigger xboxRT = new Trigger() {
@@ -36,11 +37,11 @@ public class OI {
 		public boolean get() {
 			if (driveGamePad.getRawAxis(3) > 0.1)
 				return true;
-			return false;
+			else
+				return false;
 		}
 	};
-	//public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
-	public Joystick guitarPad = new Joystick(0);
+	public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
 	public JoystickButton guitar1 = new JoystickButton(guitarPad, RobotMap.guitar1Port);
 	public JoystickButton guitar2 = new JoystickButton(guitarPad, RobotMap.guitar2Port);
 	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
