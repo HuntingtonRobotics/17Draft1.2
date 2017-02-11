@@ -6,9 +6,6 @@ import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class IntakePool extends Subsystem {
 	
 	public CANTalon intakeMotor;

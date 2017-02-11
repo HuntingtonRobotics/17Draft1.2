@@ -1,16 +1,19 @@
 package org.usfirst.frc.team5016.robot.commands;
 
 import org.usfirst.frc.team5016.robot.Robot;
-import org.usfirst.frc.team5016.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Climb extends Command {
+public class AutoCenter extends Command {
 
-    public Climb() {
+    public AutoCenter() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.climber);
+    	requires(Robot.camera);
+    	requires(Robot.driveTrain);
+    	requires(Robot.shooter);
+    	requires(Robot.gyroscope);
     }
 
     // Called just before this Command runs the first time
@@ -18,8 +21,13 @@ public class Climb extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {   
-    	Robot.climber.climbMotor.set(RobotMap.climbMotorSpeed);    	
+    protected void execute() {
+    	for(double x = 0; x <= 3.8; x++){
+    		Robot.driveTrain.drive(Robot.oi.getLeftXAxis(), Robot.oi.getLeftYAxis(), Robot.oi.getRightXAxis(), 0.0);
+    	}
+    	Robot.driveTrain.drive(0, 1, 0, 0.0);
+    	Timer.delay(1.5);
+    	Robot.driveTrain.drive(0, 1, 0, 0.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -29,12 +37,10 @@ public class Climb extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.climber.climbMotor.set(0);//Turn off climb motor
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

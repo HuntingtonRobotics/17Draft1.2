@@ -3,9 +3,6 @@ package org.usfirst.frc.team5016.robot.subsystems;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class Gyroscope extends Subsystem {
 
 	public ADXRS450_Gyro gyro;

@@ -20,13 +20,13 @@ public class DriveTrain extends Subsystem {
     			super.set(speed * RobotMap.driveSpeed);
     		}
     	};
-    	frontRight = new CANTalon(2){
+    	frontLeft = new CANTalon(2){
     		@Override
     		public void set (double speed){
-    			super.set(speed * RobotMap.driveSpeed);
+    			super.set(-speed * RobotMap.driveSpeed);
     		}
     	};
-    	backLeft = new CANTalon(3){
+    	backRight = new CANTalon(3){
     		@Override
     		public void set (double speed){
     			super.set(speed * RobotMap.driveSpeed);
@@ -35,7 +35,7 @@ public class DriveTrain extends Subsystem {
     	backLeft = new CANTalon(0){
     		@Override
     		public void set (double speed){
-    			super.set(speed * RobotMap.driveSpeed);
+    			super.set(-speed * RobotMap.driveSpeed);
     		}
     	};
     	chassis = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
@@ -72,12 +72,4 @@ public class DriveTrain extends Subsystem {
 		frontRight.set(-speed);
 		backRight.set(speed);
 	}
-	}
-	
-		
-		
-	
-  
-    
-
-
+}

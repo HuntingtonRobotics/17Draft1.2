@@ -4,15 +4,12 @@ import org.usfirst.frc.team5016.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class PoolTables extends Command {
 
     public PoolTables() {
-    	requires(Robot.camera);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.camera);
     }
 
     // Called just before this Command runs the first time

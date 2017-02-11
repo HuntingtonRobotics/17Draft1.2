@@ -5,9 +5,6 @@ import org.usfirst.frc.team5016.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class ReleaseFuel extends Command {
 	
 	/*
@@ -37,10 +34,12 @@ public class ReleaseFuel extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.intakePool.intakeMotor.set(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

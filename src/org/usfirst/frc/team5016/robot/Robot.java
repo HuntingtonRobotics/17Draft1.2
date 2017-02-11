@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team5016.robot;
 
 import org.usfirst.frc.team5016.robot.commands.MecanumDrive;
@@ -14,7 +13,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 
 public class Robot extends IterativeRobot {
 	
@@ -39,31 +37,28 @@ public class Robot extends IterativeRobot {
 		mecanumDrive = new MecanumDrive();
 		intakePool = new IntakePool();
 		
-		oi = new OI();
-		
+		oi = new OI();		
 	}
 	
 	@Override
 	public void disabledInit() {
-
 	}
 
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
-
 	
 	@Override
 	public void autonomousInit() {
 	}
+	
 	@Override
 	public void autonomousPeriodic() {
-
-		Scheduler.getInstance().run();
 		/*Robot.driveTrain.drive(1, 1, 0, 0);
 		Timer.delay(1.5);
 		Robot.driveTrain.drive(0, 0, 0, 0);*/
+		Scheduler.getInstance().run();
 	}
 
 	@Override
@@ -73,7 +68,6 @@ public class Robot extends IterativeRobot {
 		if (driveCommand != null)
 			driveCommand.start();
 		}
-
 	
 	@Override
 	public void teleopPeriodic() {
@@ -84,15 +78,12 @@ public class Robot extends IterativeRobot {
 			driveCommand.start();
 		} else {
 			driveCommand = new MecanumDrive();
-			driveCommand.start();
-			
+			driveCommand.start();			
 		}
 	}
 
-	
 	@Override
-	public void testPeriodic() {
-		
+	public void testPeriodic() {		
 		LiveWindow.run();
 	}
 }

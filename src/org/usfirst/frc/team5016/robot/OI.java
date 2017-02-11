@@ -34,7 +34,6 @@ public class OI {
 			}
 		};
 		Trigger xboxRT = new Trigger() {
-
 			@Override
 			public boolean get() {
 				if (driveGamePad.getRawAxis(3) > 0.1)
@@ -66,6 +65,4 @@ public class OI {
 	public double getLT() {
 		return driveGamePad.getRawAxis(2);
 	}
-	
-	
 }

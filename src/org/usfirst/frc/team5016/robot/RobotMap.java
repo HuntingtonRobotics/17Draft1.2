@@ -31,7 +31,7 @@ public class RobotMap {
 	public static final double shooterSpeed = 1;// The default speed that the shooter motor will rin at
 	
 	public static final int intakeMotorPort = 4;
-	public static final int intakeMotorSpeed = 1;
+	public static final double intakeMotorSpeed = 0.6;
 	
 	public static final int shooterMotorPort = 5;//The PWM for the shooter motor
 	public static final double shooterMotorSpeed = 0.9;
@@ -41,9 +41,8 @@ public class RobotMap {
 	
 	public static final int shooterEncoderChannelA = 0;//The encoder channels for the ShooterEncoder
 	public static final int shooterEncoderChannelB = 1;
-	public static final double shooterReleaseRate = 1.0;//****Need to get the actual value for this***** This is the speed of the motor when the fuel is released
+	public static final double shooterReleaseRate = 0.5;//****Need to get the actual value for this***** This is the speed of the motor when the fuel is released
 	
 	public static final int xCalibrate = 180;
-	
-	
+		
 }

@@ -4,14 +4,11 @@ import org.usfirst.frc.team5016.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class StraightDrive extends Command {
-
-    public StraightDrive() {
+    
+	public StraightDrive() {
     	requires(Robot.driveTrain);
-       }
+    }
 
     protected void initialize() {}
 
@@ -28,9 +25,7 @@ public class StraightDrive extends Command {
     		
     	case 270:
     		Robot.driveTrain.straightRight(Robot.oi.getRT());
-    		
-    	
-    	
+
     	}
     }
 
@@ -42,5 +37,6 @@ public class StraightDrive extends Command {
     }
 
     protected void interrupted() {
+    	end();
     }
 }
