@@ -4,11 +4,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 
-
-/**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
- */
 public class OI {
 	public Joystick driveGamePad = new Joystick(RobotMap.driveGamePadPort);
 	public JoystickButton xboxA = new JoystickButton(driveGamePad, RobotMap.xboxYPort);
@@ -22,50 +17,55 @@ public class OI {
 	public JoystickButton xboxLStick = new JoystickButton(driveGamePad, RobotMap.xboxLStickPort);
 	public JoystickButton xboxRStick = new JoystickButton(driveGamePad, RobotMap.xboxRStickPort);
 	
-	public Trigger xboxLT = new Trigger() {
-		@Override
-		public boolean get() {
-			if (driveGamePad.getRawAxis(2) > 0.1)
-				return true;
-			else
-				return false;
-		}
-	};
-	public Trigger xboxRT = new Trigger() {
-
-		@Override
-		public boolean get() {
-			if (driveGamePad.getRawAxis(3) > 0.1)
-				return true;
-			else
-				return false;
-		}
-	};
 	public Joystick guitarPad = new Joystick(RobotMap.guitarPadPort);
 	public JoystickButton guitar1 = new JoystickButton(guitarPad, RobotMap.guitar1Port);
 	public JoystickButton guitar2 = new JoystickButton(guitarPad, RobotMap.guitar2Port);
 	public JoystickButton guitar3 = new JoystickButton(guitarPad, RobotMap.guitar3Port);
 	public JoystickButton guitar4 = new JoystickButton(guitarPad, RobotMap.guitar4Port);
 	public JoystickButton guitar5 = new JoystickButton(guitarPad, RobotMap.guitar5Port);
-	
-	
-	
-		
-		
-	
 
-		
-		public void execute() {
-			// TODO Auto-generated method stub
-			
-		}
-	
-	 
-	
-	
-	
-	
+	public Trigger xboxLT = new Trigger() {
+			@Override
+			public boolean get() {
+				if (driveGamePad.getRawAxis(2) > 0.1)
+					return true;
+				else
+					return false;
+			}
+		};
+		Trigger xboxRT = new Trigger() {
 
+			@Override
+			public boolean get() {
+				if (driveGamePad.getRawAxis(3) > 0.1)
+					return true;
+				else
+					return false;
+			}
+		};
+	
+	public double getLeftXAxis(){
+		return driveGamePad.getRawAxis(0);
+	}
+	
+	public double getLeftYAxis(){
+		return driveGamePad.getRawAxis(1);
+	}
+	public double getRightXAxis(){
+		return driveGamePad.getRawAxis(4);
+	}
+	public double getRightYAxis(){
+		return driveGamePad.getRawAxis(5);
+	}
+	public int getPOV() {
+		return driveGamePad.getPOV();
+	}
+	public double getRT(){
+		return driveGamePad.getRawAxis(3);
+	}
+	public double getLT() {
+		return driveGamePad.getRawAxis(2);
+	}
 	
 	
 }
