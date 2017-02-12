@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5016.robot.subsystems;
 
+import org.usfirst.frc.team5016.robot.Robot;
 import org.usfirst.frc.team5016.robot.RobotMap;
 
 import com.ctre.CANTalon;
@@ -50,27 +51,15 @@ public class DriveTrain extends Subsystem {
 	}
 	
 	public void straightForward(double speed) {
-		frontLeft.set(speed);
-		backLeft.set(speed);
-		frontRight.set(speed);
-		backRight.set(speed);
+		Robot.driveTrain.drive(0, -1, 0, 0);
 	}
 	public void straightBack(double speed) {
-		frontLeft.set(-speed);
-		backLeft.set(-speed);
-		frontRight.set(-speed);
-		backRight.set(-speed);
+		Robot.driveTrain.drive(0, 1, 0, 0);
 	}
 	public void straightLeft(double speed){
-		frontLeft.set(-speed);
-		backLeft.set(speed);
-		frontRight.set(speed);
-		backRight.set(-speed);
+		Robot.driveTrain.drive(-1, 0, 0, 0);
 	}
 	public void straightRight(double speed){
-		frontLeft.set(speed);
-		backLeft.set(-speed);
-		frontRight.set(-speed);
-		backRight.set(speed);
+		Robot.driveTrain.drive(1, 0, 0, 0);
 	}
 }

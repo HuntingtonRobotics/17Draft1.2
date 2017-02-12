@@ -15,16 +15,16 @@ public class StraightDrive extends Command {
     protected void execute() {
     	switch(Robot.oi.getPOV()) {
     	case 0:
-    		Robot.driveTrain.drive(0, -1, 0, 0);
+    		Robot.driveTrain.straightForward(Robot.oi.getRT());
     		break;
     	case 90:
-    		Robot.driveTrain.drive(1, 0, 0, 0);
+    		Robot.driveTrain.straightRight(Robot.oi.getRT());
     		break;
     	case 180:
-    		Robot.driveTrain.drive(0, 1, 0, 0);
+    		Robot.driveTrain.straightBack(Robot.oi.getRT());
     		break;
     	case 270:
-    		Robot.driveTrain.drive(-1, 0, 0, 0);
+    		Robot.driveTrain.straightLeft(Robot.oi.getRT());
     		break;
     	default:
     		break;
