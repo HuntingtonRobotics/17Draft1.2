@@ -18,8 +18,7 @@ public class Camera extends Subsystem {
 
     public void initDefaultCommand() {
     	gearCam = CameraServer.getInstance().startAutomaticCapture();
-    	//shooterCam = CameraServer.getInstance().startAutomaticCapture();
-    	defaultValue = 0.0;
+    	shooterCam = CameraServer.getInstance().startAutomaticCapture();
     	x = 0;
     	y = 0;
 

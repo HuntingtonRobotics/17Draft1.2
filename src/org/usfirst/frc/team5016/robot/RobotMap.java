@@ -27,7 +27,7 @@ public class RobotMap {
 	public static final int guitar4Port = 3;
 	public static final int guitar5Port = 5;
 	
-	public static final double driveSpeed = .25;//Multiplier for the driveTrain ex. .5 reduces speed by 1/2
+	public static final double driveSpeed = 0.5;//Multiplier for the driveTrain ex. .5 reduces speed by 1/2
 	public static final double shooterSpeed = 1;// The default speed that the shooter motor will rin at
 	
 	public static final int intakeMotorPort = 4;

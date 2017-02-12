@@ -8,7 +8,6 @@ import org.usfirst.frc.team5016.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5016.robot.subsystems.Gyroscope;
 import org.usfirst.frc.team5016.robot.subsystems.IntakePool;
 import org.usfirst.frc.team5016.robot.subsystems.Shooter;
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,6 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Climber climber;
 	public static MecanumDrive mecanumDrive;
 	public static IntakePool intakePool;
+	
 	public static OI oi;
 	
 	public static Command driveCommand;
@@ -55,15 +55,17 @@ public class Robot extends IterativeRobot {
 	
 	@Override
 	public void autonomousPeriodic() {
+		Scheduler.getInstance().run();
 		/*Robot.driveTrain.drive(1, 1, 0, 0);
 		Timer.delay(1.5);
 		Robot.driveTrain.drive(0, 0, 0, 0);*/
-		Scheduler.getInstance().run();
+		
 	}
 
 	@Override
 	public void teleopInit() {
-		gyroscope.refreshGyro();
+		
+		//gyroscope.refreshGyro();
 		
 		if (driveCommand != null)
 			driveCommand.start();
@@ -78,8 +80,10 @@ public class Robot extends IterativeRobot {
 			driveCommand.start();
 		} else {
 			driveCommand = new MecanumDrive();
-			driveCommand.start();			
+			driveCommand.start();
+			
 		}
+		Scheduler.getInstance().run();
 	}
 
 	@Override
