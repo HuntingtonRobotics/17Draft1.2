@@ -11,13 +11,16 @@ public class Gyroscope extends Subsystem {
 	public double rate;
 	
     public void initDefaultCommand() {
-    	this.gyro = new ADXRS450_Gyro();
-    	this.gyro.calibrate();
+    	gyro = new ADXRS450_Gyro();
+    	gyro.calibrate();
+    	
+    	angle = gyro.getAngle();
     }
     
     public void refreshGyro(){
-    	this.gyro.getAngle();
-    	this.gyro.getRate();
+    	gyro.getAngle();
+    	gyro.getRate();
     }
+    
 }
 

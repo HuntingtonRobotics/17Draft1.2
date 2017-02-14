@@ -15,7 +15,7 @@ public class IntakePool extends Subsystem {
 
     public void initDefaultCommand() {
     	
-    	this.intakeMotor = new CANTalon(RobotMap.intakeMotorPort);
+    	intakeMotor = new CANTalon(RobotMap.intakeMotorPort);
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }

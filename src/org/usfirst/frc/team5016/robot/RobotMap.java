@@ -30,7 +30,7 @@ public class RobotMap {
 	public static final double driveSpeed = 0.5;//Multiplier for the driveTrain ex. .5 reduces speed by 1/2
 	public static final double shooterSpeed = 1;// The default speed that the shooter motor will rin at
 	
-	public static final int intakeMotorPort = 4;
+	public static final int intakeMotorPort = 15;
 	public static final double intakeMotorSpeed = 0.6;
 	
 	public static final int shooterMotorPort = 5;//The PWM for the shooter motor
@@ -44,5 +44,7 @@ public class RobotMap {
 	public static final double shooterReleaseRate = 0.5;//****Need to get the actual value for this***** This is the speed of the motor when the fuel is released
 	
 	public static final int xCalibrate = 180;
+	
+	public static final int offset = 2;
 		
 }

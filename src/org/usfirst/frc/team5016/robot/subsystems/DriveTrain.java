@@ -12,6 +12,7 @@ public class DriveTrain extends Subsystem {
 
     CANTalon frontLeft, backLeft, frontRight, backRight;
     public RobotDrive chassis;
+    public final double turnSpeed = 0.1;
     
     public void initDefaultCommand(){
     	
@@ -50,16 +51,16 @@ public class DriveTrain extends Subsystem {
 		chassis.mecanumDrive_Cartesian(-xAxis, -yAxis, rotateAxis, gyroAngle);
 	}
 	
-	public void straightForward(double speed) {
-		Robot.driveTrain.drive(0, -1, 0, 0);
+	public void straightForward(double speed, boolean turn, boolean turnPositive) {
+		Robot.driveTrain.drive(0.0, -speed, (turn ? (turnPositive ? 1 : -1) * turnSpeed : 0.0), 0.0);
 	}
-	public void straightBack(double speed) {
-		Robot.driveTrain.drive(0, 1, 0, 0);
+	public void straightBack(double speed, boolean turn, boolean turnPositive) {
+		Robot.driveTrain.drive(0.0, speed, (turn ? (turnPositive ? 1 : -1) * turnSpeed : 0.0), 0.0);
 	}
-	public void straightLeft(double speed){
-		Robot.driveTrain.drive(-1, 0, 0, 0);
+	public void straightLeft(double speed, boolean turn, boolean turnPositive){
+		Robot.driveTrain.drive(-speed, 0.0, (turn ? (turnPositive ? 1 : -1) * turnSpeed : 0.0), 0.0);
 	}
-	public void straightRight(double speed){
-		Robot.driveTrain.drive(1, 0, 0, 0);
+	public void straightRight(double speed, boolean turn, boolean turnPositive){
+		Robot.driveTrain.drive(speed, 0.0, (turn ? (turnPositive ? 1 : -1) * turnSpeed : 0.0), 0.0);
 	}
 }
